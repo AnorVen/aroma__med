@@ -16,6 +16,8 @@ var cleanCSS = require ('gulp-clean-css');
 var gcmq = require('gulp-group-css-media-queries');
 var run = require("run-sequence");
 var del = require("del");
+var rigger = require("gulp-rigger");
+var fileinclude = require('gulp-file-include');
 
 gulp.task("style", function() {
   gulp.src("less/style.less")
@@ -80,7 +82,11 @@ gulp.task("symbols", function() {
 });
 
 gulp.task("html:copy", function() {
- return gulp.src("*.html")
+ return gulp.src("[^_]*.html")
+ .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
  .pipe(gulp.dest("build"));
 });
 
