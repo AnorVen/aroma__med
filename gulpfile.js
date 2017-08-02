@@ -1,7 +1,7 @@
 "use strict";
 
 var gulp = require("gulp");
-var less = require("gulp-less");
+//var less = require("gulp-less");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
@@ -16,12 +16,20 @@ var cleanCSS = require ('gulp-clean-css');
 var gcmq = require('gulp-group-css-media-queries');
 var run = require("run-sequence");
 var del = require("del");
-var rigger = require("gulp-rigger");
 var fileinclude = require('gulp-file-include');
+var uglify = require("uglify-js");
+var sourcemaps = require('gulp-sourcemaps')
+var stylus = require('gulp-stylus');
+var nib = require('nib');
+var csscomb = require('gulp-csscomb');
 
-gulp.task("style", function() {
+/* It's principal settings in smart grid project */
+
+/*
+gulp.task("style", function() { // LESS!!!
   gulp.src("less/style.less")
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(gcmq())
     .pipe(postcss([
@@ -32,6 +40,7 @@ gulp.task("style", function() {
        sort: true
        })
     ]))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("build/css"))
     .pipe(cleanCSS())
    // .pipe(minify())
@@ -39,12 +48,39 @@ gulp.task("style", function() {
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
-
-gulp.task('default', function () {
-    gulp.src('src/style.css')
-        .pipe(gcmq())
-        .pipe(gulp.dest('dist'));
+*/
+gulp.task("style", function() {  //Stylus!!!
+  gulp.src("styl/style.styl")
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(stylus({
+    	use:[nib()],
+      'include css': true,
+      linenos: true
+    }))
+    .pipe(gcmq())
+    .pipe(postcss([
+      autoprefixer({browsers: [
+        "last 2 versions"
+      ]}),
+      mqpacker({
+       sort: true
+       })
+    ]))
+    .pipe(csscomb())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest("build/css"))
+    .pipe(cleanCSS({
+      level: 2
+    }))
+  
+   // .pipe(minify())
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest("build/css"))
+    .pipe(server.stream());
 });
+
+
 
 gulp.task("images", function() {
   return gulp.src("build/img/**/*.{png,jpg,gif}")
@@ -55,12 +91,11 @@ gulp.task("images", function() {
     .pipe(gulp.dest("build/img"));
 });
 
-gulp.task("copy", function() {
+gulp.task("copy", ["html:copy"], function() {
  return gulp.src([
  "fonts/**/*.{woff,woff2}",
  "img/**",
- "js/**",
- "*.html"
+ "js/**"
  ], {
  base: "."
  })
@@ -91,9 +126,28 @@ gulp.task("html:copy", function() {
 });
 
 gulp.task("html:update", ["html:copy"], function(done) {
- server.reload();
+ server.reload(); // может тут накосячил
  done();
 });
+
+
+gulp.task('js', function () {
+    return gulp.src('js/*.js')
+    .pipe(sourcemaps.init())
+        .pipe(fileinclude({
+          prefix: '@@',
+          basepath: '@file'
+        }))
+      //  .pipe(modernizr())
+       // .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('build/js'))
+        .pipe(server.stream());
+});
+
+
+
+
 
 gulp.task("serve", function() {
   server.init({
@@ -104,8 +158,9 @@ gulp.task("serve", function() {
     ui: false
   });
 
-  gulp.watch("less/**/*.less", ["style"]);
+  gulp.watch("styl/**/*.styl", ["style"]);
   gulp.watch("*.html", ["html:update"]);
+  gulp.watch("*.js", ["js"]);
 });
 
 gulp.task("build", function(fn){
@@ -115,6 +170,14 @@ gulp.task("build", function(fn){
    "style",
    "symbols",
    "images",
+   "js",
  fn
  );
 });
+
+
+ 
+
+ 
+
+

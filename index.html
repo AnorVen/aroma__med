@@ -6,101 +6,104 @@
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-
-	<!-- Latest compiled and minified CSS -->
-	<!--	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
 	<link rel="stylesheet" href="css/style.min.css">
-
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="js/jquery.grid-a-licious.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
-<div class="tabs">
-	<input id="tab1" type="radio" name="tabs" checked>
-	<label class="tabs__item" for="tab1" title="Вкладка 1"><img src="#" alt="" class="tabs__img"><span
-			class="tabs__text">Вкладка 1</span></label>
 
-	<input id="tab2" type="radio" name="tabs">
-	<label class="tabs__item" for="tab2" title="Вкладка 2"><img src="#" alt="" class="tabs__img"><span
-			class="tabs__text">Вкладка 2</span></label>
 
-	<input id="tab3" type="radio" name="tabs">
-	<label class="tabs__item" for="tab3" title="Вкладка 3"><img src="#" alt="" class="tabs__img"><span
-			class="tabs__text">Вкладка 3</span></label>
+@@include('./header.html')
+<main class="main">
+	<div class="main__list wrapper" id="container">
 
-	<input id="tab4" type="radio" name="tabs">
-	<label class="tabs__item" for="tab4" title="Вкладка 4"><img src="#" alt="" class="tabs__img"><span
-			class="tabs__text">Вкладка 4</span></label>
-	<input id="tab5" type="radio" name="tabs">
-	<label class="tabs__item" for="tab5" title="Вкладка 5"><div class="tabs__name"><img src="#" alt="" class="tabs__img">
-		<span class="tabs__text"> Салон + Багажник
-	</span></div></label>
-
-	<section class="content" id="content1">
-		<div class="content1--1">
-			<p>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque, blanditiis consectetur corporis culpa dolor, fugiat impedit molestias nihil repellendus sequi ut vel? Asperiores debitis distinctio laudantium nam sapiente. Ullam.</span><span>Culpa delectus deserunt fugiat iusto optio? Alias asperiores atque autem commodi deserunt, dicta, dolore, exercitationem id iure laudantium libero maiores molestiae optio praesentium rem repellat similique suscipit tempora voluptate voluptates?</span><span>Ab accusantium aliquam doloribus ducimus error est eum exercitationem explicabo facere fugit incidunt, iure quisquam rem, sed voluptatem. Aut dicta dignissimos maiores nesciunt nisi numquam odit quaerat quasi quo veritatis?</span><span>Asperiores deleniti dicta eaque neque odio. Aliquid amet aut consequatur eaque, eius eos error fuga, necessitatibus odio optio pariatur provident voluptates voluptatum. Ducimus hic natus quae repudiandae sed ullam unde.</span><span>Amet blanditiis, doloribus ducimus eveniet exercitationem expedita facilis, fugiat in incidunt ipsum iure laudantium maiores nemo neque odio possimus quaerat, quia quidem quod quos repellat repellendus rerum totam ut veritatis.</span><span>Doloremque, ducimus, eveniet. Aliquid animi consequuntur culpa cum est, facilis ipsam laudantium magnam magni minima nobis, perferendis qui quos reiciendis sequi sint sunt temporibus tenetur, totam ullam vero voluptate voluptatum.</span><span>Ad architecto cumque distinctio fugiat iste officia quo. Aspernatur autem corporis cupiditate delectus, est ex, facilis harum impedit incidunt iste laborum nulla obcaecati odio odit possimus quo sapiente totam, veniam!</span><span>Assumenda consequatur cumque cupiditate dolor dolorem eligendi ipsa itaque numquam quasi rem! Autem, distinctio eius eos est et minima necessitatibus officia omnis placeat provident tenetur velit vitae. Autem, corporis, dolore?</span>
-			</p>
-		</div>
-		<div class="content1--2">
-			<p>
-				1 2
-			</p>
-		</div>
-	</section>
-	<section class="content" id="content2">
-		<div class="content2--1">
-			<p>
-				21
-			</p>
-		</div>
-		<div class="content2--2">
-			<p>
-				2 2
-			</p>
-	</section>
-	<section class="content" id="content3">
-		<div class="content3--1">
-			<p>
-				31
-			</p>
-		</div>
-		<div class="content3--2">
-			<p>
-				3 2
-			</p>
-	</section>
-	<section class="content" id="content4">
-		<div class="content4--1">
-			<p>
-				41
-			</p>
-		</div>
-		<div class="content4--2">
-			<p>
-				4 2
-			</p>
-	</section>
-	<section class="content" id="content5">
-		<div class="content5--1">
-			<p>
-				51
-			</p>
-		</div>
-		<div class="content5--2">
-			<p>
-				5 2
-			</p>
-	</section>
-</div>
-<!--
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
+		<section class="stalactite item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class=" stalactite item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur ducimus eos facilis necessitatibus provident totam!
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class=" stalactite item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения рабоEst eveniet itaque libero nesciunt, non praesentium recusandae sit! Earum fugiat nam quod recusandae.тnesciunt, non praesentium recusandae sit! Earum fugiat nam quod recusandae.тnesciunt, non praesentium recusandae sit! Earum fugiat nam quod recusandae.тnesciunt, non praesentium recusandae sit! Earum fugiat nam quod recusandae.т</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="stalactite item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">Est eveniet itaque libero nesciunt, non praesentium recusandae sit! Earum fugiat nam quod recusandae.наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">Est eveniet itaque libero nesciunt, non praesentium recusandae sit! Earum fugiat nam quod recusandae.наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+		<section class="item stalac_box main__item">
+			<figure class="main__figure"><a href="#" class="main__img"><img src="img/51IBz0kxzUQ.jpg" alt="картинка">
+				<figuration class="main__figuration">наши работы - ЗАГОЛОВОК
+					<p>пояснения работ</p>
+				</figuration>
+			</a></figure>
+		</section>
+	</div>
+</main>
 </body>
 </html>
