@@ -1,0 +1,244 @@
+body{
+  font-family: "PT Sans", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  color: #161616
+}
+h1, h2, h3, h4, h5, h6{
+  font-family 'PT Sans Bold', "Helvetica", "Arial", sans-serif;
+}
+a{
+  color: #2a2328;
+  &:hover{
+    color: #2a2526
+  }
+}
+.header{
+  background: url(../img/22.png) no-repeat, linear-gradient(to top, #feba09, #ffeb00);
+  @media screen and (max-width: 992px){
+    background: linear-gradient(to top, #feba09, #ffeb00);
+  }
+  padding-top: 5px;
+
+  &>.conteiner>.row{
+    height: 60px;
+  }
+}
+.logo{
+  position: relative
+  &>div{
+    position: absolute
+    &>a>img{
+      background-color: rgba(#000000, 0.08);
+    }
+
+    
+  }
+ }
+.search{
+  padding-top: 5px;
+  height: 50px;
+  .form-control{
+    font-style: italic;
+    background: linear-gradient(to right,#ffffff,#fff29b);
+    &:focus{
+      box-sizing none;
+      outline: none
+      box-shadow none;
+      background: linear-gradient(to right, darken(#ffda52, 10%) , darken(#fff29b, 10%));
+    }
+  }
+  .search__btn{
+
+    button{
+      background: linear-gradient(to right,#d2f935,#12e233);
+      &:focus{
+        outline none;
+      }
+        &:hover{
+          background: linear-gradient(to right,darken(#d2f935, 10%),darken( #12e233, 10%))
+        }
+    }
+  }
+}
+.input-group-btn{
+  border: none;
+  &:focus{
+    outline: none
+  }
+}
+.contacts{
+  ul{
+    padding: 0;
+    li{
+      list-style none;
+    }
+  }
+    @media screen and (min-width: 500px) and (max-width: 991px){
+      &>ul{
+        width:100%;
+        display flex;
+        flex-wrap nowrap;
+        justify-content space-between
+        &>li{
+          font-size 24px;
+          text-align center;
+
+        }
+
+      }
+    }
+    @media screen and (max-width: 499px) {
+      &>ul{
+
+        &>li {
+          margin: 0 auto;
+          font-size: 30px;
+        }
+      }
+    }
+
+}
+.account{
+  ul{
+    padding: 0;
+    li{
+      list-style none;
+    }
+  }
+  @media screen and (min-width: 500px) and (max-width: 991px){
+    font-size 30px;
+    float right;
+
+  }
+  @media screen and (max-width: 499px) {
+    font-size 30px;
+  }
+}
+.header__cart{
+  &__btn{
+    background: linear-gradient(to right,#d2f935,#12e233);
+    border-color transparent #12e233 transparent #d2f935;
+    &:hover{
+      border:1px solid #8c8c8c;
+      background: linear-gradient(to right,darken(#d2f935, 10%),darken( #12e233, 10%));
+    }
+  }
+
+  @media screen and (max-width: 1200px){
+display none;
+
+  }
+}
+.header__cart__dop{
+  display none;
+  button{
+    background: linear-gradient(to right,#d2f935,#12e233);
+    border-color transparent #12e233 transparent #d2f935;
+  }
+  @media screen and (max-width: 1200px){
+    display block;
+    position: static
+
+  }
+
+}
+
+.info__navbar{
+  @media screen and (min-width: 768px){
+    padding: 0;
+    width:100%;
+    border: none;
+  }
+  @media screen and (max-width: 768px){
+    margin-bottom: 0;
+    bottom{
+      float: left;
+    }
+  }
+}
+.info__nav{
+  &>li{
+    background-color: inherit
+    border: none;
+    text-align: center;
+        &:nth-child(2) {
+          border-left: none;
+        }
+        & > a {
+          padding: 15px auto;
+          &:hover {
+            background: linear-gradient(to bottom, #fe8000, #ffeb00);
+            border-radius: 20px;
+          }
+
+          /*
+          &:hover {
+            background: linear-gradient(to right, #4afb66, #0ac097);
+            border-radius: 20px;
+
+          }
+          */
+        }
+
+      }
+
+  @media screen and (min-width: 768px){
+    display flex;
+    flex-wrap: nowrap
+    justify-content center;
+    width: 100%;
+    &>li{
+      flex-grow: 1;
+
+    }
+  }
+  @media screen and (max-width: 768px){
+    &>li{
+      border: none;
+      font-size 25px;
+    }
+
+  }
+
+}
+.info__collapse{
+  @media screen and (min-width: 768px){
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15px;
+  }
+}
+.navbar-header{
+  @media screen and (max-width: 768px){
+    > button{
+      font-size: 30px;
+      float left;
+    }
+
+  }
+}
+@media screen and (max-width: 768px){
+.account__mobile{
+  font-size:20px;
+  li{
+   margin: 10px;
+  }
+}
+}
+.headerCart{
+  width: 460px;
+  @media screen and (max-width: 768px){
+    width: 100%
+  }
+    &__btn{
+      background-color: red
+      &:focus{
+        background-color: darken(red, 20$);
+      }
+    }
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+  background: linear-gradient(to bottom, #fe8000, #ffeb00);
+  border-color transparent #ffeb00 transparent #fe8000;
+  color: #2a2328;
+}
